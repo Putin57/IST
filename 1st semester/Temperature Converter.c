@@ -9,7 +9,7 @@ int main(){
     printf("1.Convert Celcius to Fahrenheit.\n");
     printf("2.Convert Fahrenheit to Celcius.\n");
     while(1){
-    printf("Enter type a number (1/2): ");
+    printf("\nEnter type a number (1/2): ");
     scanf("%d",&n);
     if (n==1||n==2){
         if (n==1){
@@ -20,7 +20,7 @@ int main(){
             printf("\nDo you want to Continue?(Y/N): ");
             scanf(" %c",&x);
             if (x=='y'||x=='Y'){continue;}
-            else{printf("Thank You..");
+            else{printf("\nThank You..");
             break;}
             }
         else if(n==2){
