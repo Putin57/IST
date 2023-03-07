@@ -5,7 +5,7 @@ int main(){
     float c,f,celcius,fahrenheit;
     int n;
     char x;
-    printf("### Temerature Converter ###\n");
+    printf("###__Temerature Converter__###\n");
     printf("1.Convert Celcius to Fahrenheit.\n");
     printf("2.Convert Fahrenheit to Celcius.\n");
     while(1){
@@ -19,9 +19,12 @@ int main(){
             printf("Fahrenheit: %.2f",fahrenheit);
             printf("\nDo you want to Continue?(Y/N): ");
             scanf(" %c",&x);
-            if (x=='y'||x=='Y'){continue;}
+            if (x=='y'||x=='Y'){
+                continue;
+            }
             else{printf("\nThank You..");
-            break;}
+            break;
+                }
             }
         else if(n==2){
             printf("\nEnter Fahrenheit value: ");
@@ -30,17 +33,23 @@ int main(){
             printf("Celcious: %.2f",celcius);
             printf("\nDo you want to Continue?(Y/N): ");
             scanf(" %c",&x);
-            if (x=='y'||x=='Y'){continue;}
+            if (x=='y'||x=='Y'){
+                continue;
+            }
             else{printf("\nThank You..");
-            break;}
-        }}
+            break;
+                }
+        }
+    }
     else{
         printf("\nEnter valid Number.");
         printf("\nDo you want to Continue?(Y/N): ");
             scanf(" %c",&x);
-            if (x=='y'||x=='Y'){continue;}
-            else{printf("Thank You..");
-            break;}
+            if (x=='y'||x=='Y'){
+                continue;
+            }else{printf("Thank You..");
+            break;
+                 }
         }
     }
     return 0;
