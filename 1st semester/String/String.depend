@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1682841232 source:d:\software\c and c++\string\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1682843267 source:d:\software\c and c++\string\string_input_output.c
+	<stdio.h>
+
+1682847245 source:d:\software\c and c++\string\practice.c
+	<stdio.h>
+	<string.h>
+
