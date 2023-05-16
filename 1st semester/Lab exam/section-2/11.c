@@ -16,7 +16,7 @@ int main(){
     for(i=0;i<5;i++){
     printf("\nRoll no : ");
     scanf("%d",&s[i].id);
-    printf("Enter Name : ");
+    printf("Enter Name(nick name only) : ");
     scanf("%s",s[i].name);
     printf("Enter Marks : ");
     scanf("%d",&s[i].mark);
