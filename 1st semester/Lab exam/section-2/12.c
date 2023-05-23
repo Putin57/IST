@@ -11,3 +11,8 @@ int main(){
     fclose(fp);
     return 0;
 }
+
+
+/*
+After running the code here, typing something in the input and pressing ctrl+z will stop it and you can see the output in the "output.txt" file...
+*/
