@@ -4,7 +4,7 @@ int main(){
     float a,b,c,d,root1,root2,real,imagine;
     printf("Enter coefficients a,b and c: ");
     scanf("%f %f %f",&a,&b,&c);
-    d=pow(b,2)-4*a*c;
+    d=pow(b,2)-(4*a*c);
     if (d>0){
         root1=(-b+sqrt(d))/(2*a);
         root2=(-b-sqrt(d))/(2*a);
