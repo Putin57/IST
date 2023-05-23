@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
     int n;
-    printf("Enter your Fibonacci number(only positive): ");
+    printf("Enter number(only positive): ");
     scanf("%d",&n);
     int x=0,y=1;
     printf("The first %d Fibonacci numbers :\n",n);
