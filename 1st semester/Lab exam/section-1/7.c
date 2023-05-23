@@ -2,7 +2,7 @@
 #include <math.h>
 int main(){
     float a,b,c,d,root1,root2,real,imagine;
-    printf("Enter coefficients a,b,and c: ");
+    printf("Enter coefficients a,b and c: ");
     scanf("%f %f %f",&a,&b,&c);
     d=b*b-4*a*c;
     if (d>0){
