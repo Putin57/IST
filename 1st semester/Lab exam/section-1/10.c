@@ -13,6 +13,6 @@ int main(){
         num=pow(i,-i);
         total+=num;
     }
-    printf("The summation of number : %.2f",total);
+    printf("The summation of number : %.5f",total);
     return 0;
 }
