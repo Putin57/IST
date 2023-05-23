@@ -1,27 +1,33 @@
-#include<stdio.h>
-int main(void){
-    int a[10],i=0,j=0,n,t;
-    printf("\nEnter the no. elements: ");
-    scanf("%d",&n);
-    printf("\n");
-    printf("Enter the element: ");
-    for(i=0;i<n;i++){
-        scanf("%d",&a[i]);
-    }
-    for(j=0;j<(n-1);j++){
-        for(i=0;i<(n-1);i++){
-            if(a[i+1]<a[i]){
-                t=a[i];
-                a[i]=a[i+1];
-                a[i+1]=t;
+#include <stdio.h>
+void bubbleSort(int arr[],int n){
+    int i,j,k;
+    for(i=0;i<n-1;i++){
+        for (j=0;j<n-i-1;j++){
+            if (arr[j+1]<arr[j]){
+                k=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=k;
             }
         }
     }
-
+}
+int main(){
+    int a[10],i=0,n;    
+    printf("\nEnter the number of elements: ");
+    scanf("%d",&n);    
+    printf("\nEnter the elements: ");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }    
+    bubbleSort(a,n);    
     printf("\nAscending Order: ");
-    for(i=0;i<n;i++){printf("%d ",a[i]);}
-printf("\n");
+    for(i=0;i<n;i++){
+        printf("%d ",a[i]);
+    }   
     printf("\nDescending Order: ");
-    for(i=n;i>0;i--){printf("%d ",a[i-1]);}
-    printf("\n");
+    for (i=n-1;i>=0;i--){
+        printf("%d ",a[i]);
+    }    
+    printf("\n");    
+    return 0;
 }
