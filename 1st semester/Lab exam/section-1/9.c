@@ -1,17 +1,21 @@
 #include <stdio.h>
 int main(){
-    int n,i;
-    int fib1=0,fib2=1,fib3;
-    printf("Enter the value of n: ");
+    int n;
+    printf("Enter your Fibonacci number(only positive): ");
     scanf("%d",&n);
-    printf("The first %d Fibonacci numbers are:\n",n);
-    printf("%d %d ",fib1,fib2);
-    for(i=3;i<=n;i++){
-        fib3=fib1+fib2;
-        printf("%d ",fib3);
-        fib1=fib2;
-        fib2=fib3;
+    int x=0,y=1;
+    if(n==1){
+        printf("%d\n",x);}
+    else{
+        printf("%d ",x);
+        printf("%d ",y);
+    for(int i=2;i<n;i++){
+        int z=x+y;
+        printf("%d ",z);       
+        x=y;
+        y=z;
+        }
     }
-    printf("\n");
     return 0;
 }
+
