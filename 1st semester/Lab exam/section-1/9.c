@@ -4,6 +4,7 @@ int main(){
     printf("Enter your Fibonacci number(only positive): ");
     scanf("%d",&n);
     int x=0,y=1;
+    printf("The first %d Fibonacci numbers :\n",n);
     if(n==1){
         printf("%d\n",x);}
     else{
