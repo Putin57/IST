@@ -2,7 +2,7 @@
 int main(){
     FILE *fp;
     char ch;
-    fp=fopen("output.txt","w");
+    fp=fopen("INPUT.txt","w");
     ch=getchar();
     while(ch!=EOF){
         fputc(ch,fp);
