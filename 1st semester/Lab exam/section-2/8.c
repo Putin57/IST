@@ -5,7 +5,7 @@ char str[30];
 printf("Enter The String: ");
 gets(str);
 int n = strlen(str);
-printf("\nThe String's Lenth is: %d\n",n);
+printf("\nThe String's Length is: %d\n",n);
 char aux[n],word[60];
 printf("\nEnter a string to Compare with the 1st one: ");
 gets(word);
