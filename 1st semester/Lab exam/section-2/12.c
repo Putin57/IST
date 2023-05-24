@@ -14,5 +14,5 @@ int main(){
 
 
 /*
-After running the code here, typing something in the input and pressing ctrl+z will stop it and you can see the output in the "output.txt" file...
+After running the code here, typing something in the input and pressing ctrl+z will stop it and you can see the output in the "INPUT.txt" file...
 */
