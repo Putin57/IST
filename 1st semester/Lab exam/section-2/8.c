@@ -14,6 +14,6 @@ strcpy(aux,str);
 printf("\nThe copied string is: %s\n",aux);
 strcat(str," ");
 strcat(str,word);
-printf("\nAfter Adding another srting the new string is: %s\n",str);
+printf("\nAfter Adding another string the new string is: %s\n",str);
 return 0;
 }
