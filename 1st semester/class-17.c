@@ -16,5 +16,6 @@ if (isupper(text)>0){
 }else{
     putchar(toupper(text));
 }
+printf("\n");
 return 0;
 }
