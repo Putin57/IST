@@ -22,7 +22,7 @@ int main(){
         scanf("%d",&arr[i]);
         sum+=arr[i];
     }
-    printf("The total summation of array: %d",sum);
+    printf("The total summation of array: %d\n",sum);
 
     return 0;
 }
