@@ -1,7 +1,7 @@
 /*
 question :--- 
-Input: a       Input: M
-Output: A      Output: m
+Input: a       Output: A
+Input: M       Output: m
 
 */
 
