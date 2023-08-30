@@ -1,18 +1,19 @@
 /*
-Question: write the summation of : 1+2^-2+3^-3+4^-4+5^-5+....n^-n
+Question: write the summation of : 1/1! + 2/2! + 3/3! + 4/4! + 5/5! + 6/6! + 7/7!.....
 */
 
+
 #include<stdio.h>
-#include<math.h>
 int main(){
-    float n,i;
-    float num,total=0;
-    printf("Enter the Number: ");
+    float n,count=0,i,j;
     scanf("%f",&n);
     for(i=1;i<=n;i++){
-        num=pow(i,-i);
-        total+=num;
+        float num=1;
+        for(j=1;j<=i;j++){
+            num*=j;
+        } 
+        count+=i/num;
     }
-    printf("The summation of number : %.5f",total);
+    printf("%.5f\n",count);
     return 0;
 }
