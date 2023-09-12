@@ -17,11 +17,11 @@ int main(){
             break;
         }
     }
-    if(sum>0){
-        printf("\nYes, your searching element has in array and the index no: %d",sum);
+    if(sum){
+        printf("\nYes, your searching element has in array and the index no: %d\n",sum);
     }
     else{
-        printf("\nNo, your searching element hasn't in array.");
+        printf("\nNo, your searching element hasn't in array.\n");
     }
     return 0;
 }
