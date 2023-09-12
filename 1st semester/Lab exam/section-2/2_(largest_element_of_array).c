@@ -1,20 +1,14 @@
 #include<stdio.h>
-#define TEN 10
+#include<math.h>
 int main(){
-    int arr[TEN],i,p,c,z;
-    printf("Enter 10 number: \n");
-    for (i=0;i<TEN;i++){
+    printf("Enter the size array: ");
+    int n;
+    scanf("%d",&n);
+    int arr[n],mx=0;
+    printf("Enter the numbers for array: ");
+    for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
+        mx=fmax(arr[i],mx);
     }
-    for(p=1;p<TEN;p++){
-        for (c=0;c<TEN-p;c++){
-            if(arr[c]<arr[c+1]){
-            z=arr[c];
-            arr[c]=arr[c+1];
-            arr[c+1]=z;
-            }
-        }
-    }
-    printf("The largest element of an array: %d",arr[0]);
-    return 0;
+    printf("The max element is : %d\n",mx);
 }
