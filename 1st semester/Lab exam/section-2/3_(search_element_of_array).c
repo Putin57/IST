@@ -4,11 +4,11 @@ int main(){
     int n;
     scanf("%d",&n);
     int i,arr[n];
-    printf("\nEnter the array element: \n");
+    printf("\nEnter the array element: ");
     for(i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
-    int m,sum=0,index=0;
+    int m,sum=0;
     printf("\nEnter the searching element: ");
     scanf("%d",&m);
     for (i=0;i<n;i++){
