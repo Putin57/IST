@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 int main(){
     FILE *f1,*f2;
     f1=fopen("INPUT.txt","r");
