@@ -1,35 +1,33 @@
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-struct student{
-    int id;
+#include <stdio.h>
+struct Student {
     char name[50];
-    int mark;
+    int roll;
+    float marks;
 };
-
-int main(){
-    struct student s[5];
-    int i;
-
-    printf("\nThe records only for 5 student\n\n");
-
-    for(i=0;i<5;i++){
-    printf("\nRoll no : ");
-    scanf("%d",&s[i].id);
-    printf("Enter Name(nick name only) : ");
-    scanf("%s",s[i].name);
-    printf("Enter Marks : ");
-    scanf("%d",&s[i].mark);
+int main() {
+    struct Student boys[3];
+    for (int i = 0; i < 3; i++) {
+        printf("%d:\n",i+1);
+        printf("Name: ");
+        scanf("%s",boys[i].name);
+        printf("Roll: ");
+        scanf("%d",&boys[i].roll);
+        printf("Marks: ");
+        scanf("%f",&boys[i].marks);
     }
-
-    printf("\nData of 5 students");
-
-    for(i=0;i<5;i++){
-        printf("\nID no : %d\t Name : %s\t Marks : %d",s[i].id,s[i].name,s[i].mark);
+    printf("\nBoys result:\n");
+    printf("Name\tRoll\tMarks\n");
+    for (int i = 0; i <2; i++) {
+        for (int j = 0; j < 3 - i - 1; j++) {
+            if (boys[j].marks <boys[j + 1].marks) {
+                struct Student temp =boys[j];
+                boys[j] =boys[j + 1];
+                boys[j + 1] = temp;
+            }
+        }
     }
-
-    printf("\n\n");
-    exit(0);
-    getch();
+    for (int i = 0; i < 3; i++) {
+        printf("%s\t%d\t\t%.2f\n", boys[i].name,boys[i].roll,boys[i].marks);
+    }
     return 0;
 }
