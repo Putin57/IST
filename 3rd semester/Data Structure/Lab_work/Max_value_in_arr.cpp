@@ -1,5 +1,20 @@
 // find the max value of an array from user using while loop..
+/*
+------------------------------------------------------------------------
+|Algorithm :                                                            |
+|step 1. K := 1, LOC := 1 and MAX := DATA[1]                            |
+|step 2. Repeat steps 3 and 4 while K <= N:                             |
+|step 3. If MAX < DATA[K], then :                                       |
+|                set LOC := K and MAX := DATA[K]:                       |
+|step 4. set K := K+                                                    |
+|step 5. Write LOC, MAX                                                 |
+|step 6. Exit                                                           |
+------------------------------------------------------------------------
+here, 
+DATA = array
+LOC = Location / Index
 
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
