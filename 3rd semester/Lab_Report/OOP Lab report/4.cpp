@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
     ifstream src("main.txt");
-    ofstream dest("copy.txt");
-    dest << src.rdbuf();
+    ofstream dest("append.txt",ios::app);
+    dest << '\n' << src.rdbuf();
+    return 0;
 }
