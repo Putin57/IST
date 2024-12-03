@@ -3,7 +3,7 @@
 --------------------------------------------------------------------
 |Algorithm:                                                        |
 |step-1: set Beg:=LB, End:=UB and                                  |
-|        mid=Int((Beg + End))                                      |
+|        mid=Int((Beg + End)/2)                                    |
 |step-2: Repeat steps 3 and 4 while Beg <= End and data[mid]!=Item |
 |step-3: If Item<Data[mid],then:                                   |
 |            set End:=mid-1                                        |
