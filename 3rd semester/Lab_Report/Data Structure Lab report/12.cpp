@@ -1,3 +1,24 @@
+//12. Write a program to implement all operatation in an array (Insertion and Deletion)
+/*
+-----------------------------------------
+Algorithm (Insertion):
+step-1: set j:=N
+step-2: Repeat steps 3 and 4 while j>=k
+step-3:     set LA[j+1]:=LA[j]
+step-4:     set j:=j-1
+step-5: set LA[k]:=item
+step-6: set N:=N+1
+step-7: Exit
+-----------------------------------------
+-----------------------------------------
+Algorithm (Deletion): 
+step-1: set Item:=LA[k]
+step-2: Repeat for j=k to N-1:
+            set LA[j]:=LA[j+1]
+step-3: set N:N-1
+step-4: Exit
+----------------------------------------
+*/
 #include <bits/stdc++.h>
 using namespace std; 
 
