@@ -1,17 +1,17 @@
 //1.Find the Smallest and Largest element of the Array
 /*
-|-----------------------------------------------------------|
-|Algorithm:						    |
-|step-1: Set K:=1,LOC:=1,Max:=Data[1] and Min:= Data[1]     |
-|setp-2: Repeat steps 3 to 5 while k<=N: 		    |
-|step-3: 	If Max < Data[K], then: 		    |
-|				set LOC:=K and Max:=Data[K] |
-|step-4: 	If Min>Data[k], then: 			    |
-|				set LOC:=k and Min:=Data[K] |
-|step-5: 	set K:=K+1				    |
-|step-6: Write: LOC, Max, Min				    |
-|step-7: Exit.						    |	
-|-----------------------------------------------------------|
+-----------------------------------------------------------
+Algorithm:						    
+step-1: Set K:=1,LOC:=1,Max:=Data[1] and Min:= Data[1]     
+setp-2: Repeat steps 3 to 5 while k<=N: 		    
+step-3: 	If Max < Data[K], then: 		    
+				set LOC:=K and Max:=Data[K] 
+step-4: 	If Min>Data[k], then: 			    
+				set LOC:=k and Min:=Data[K] 
+step-5: 	set K:=K+1				    
+step-6: Write: LOC, Max, Min				    
+step-7: Exit.						    	
+-----------------------------------------------------------
 */
 
 #include <bits/stdc++.h>
