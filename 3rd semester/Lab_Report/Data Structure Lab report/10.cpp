@@ -1,17 +1,17 @@
 //10. write a program to sort an array using quick sort algorithm
 /*
 -----------------------------------------------------------------
-|Algorithm:                                                     |
-|step-1: Top:=NULL                                              |
-|step-2: If N>1, then:Top:=Top+1, Lower[1]:=1, Upper[1]:=N      |
-|step-3: Repeat steps 4 to 7 while Top != NULL                  |
-|step-4:     set Beg:=Lower[Top], End:=Upper[Top], Top:=Top-1   |
-|step-5:     call Quick(A,N,Beg,End, Loc)                       |
-|step-6:     If Beg<Loc-1, then:                                |
-|                Top:=Top+1, Lower[Top]:=Beg, Upper[Top]=Loc-1  |
-|step-7:     If Loc+1 < End, then:                              |
-|                Top:Top+1, Lower[Top]:=Loc+1, Upper[Top]:=End  |
-|step-8: Exit                                                   |    
+Algorithm:                                                     
+step-1: Top:=NULL                                              
+step-2: If N>1, then:Top:=Top+1, Lower[1]:=1, Upper[1]:=N      
+step-3: Repeat steps 4 to 7 while Top != NULL                  
+step-4:     set Beg:=Lower[Top], End:=Upper[Top], Top:=Top-1   
+step-5:     call Quick(A,N,Beg,End, Loc)                       
+step-6:     If Beg<Loc-1, then:                                
+                Top:=Top+1, Lower[Top]:=Beg, Upper[Top]=Loc-1  
+step-7:     If Loc+1 < End, then:                              
+                Top:Top+1, Lower[Top]:=Loc+1, Upper[Top]:=End  
+step-8: Exit                                                       
 -----------------------------------------------------------------
 */
 #include <bits/stdc++.h>
