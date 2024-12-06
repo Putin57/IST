@@ -24,7 +24,7 @@ int main(){
     int p, q; cin >> p >> q;
     Large_Finder lf;
     Small_Finder sf;
-    cout << "The Sarge number is: " << sf.small(p, q) << '\n';
-    cout << "The Lmall number is: " << lf.large(p, q) << '\n' << '\n';
+    cout << "The Small number is: " << sf.small(p, q) << '\n';
+    cout << "The Large number is: " << lf.large(p, q) << '\n' << '\n';
     return 0;
 }
