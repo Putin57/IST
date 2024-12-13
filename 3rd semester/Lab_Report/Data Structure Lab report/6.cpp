@@ -36,3 +36,12 @@ int main(){
     tower(n, a, b, c);
     return 0;
 }
+
+
+
+/*
+--------------------------
+time complexity: O(2^n)
+space complexity: O(n)
+--------------------------
+*/
