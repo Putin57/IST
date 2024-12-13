@@ -42,3 +42,9 @@ int main(){
 	return 0;
 }
 
+
+/*-------------------
+time complexity: O(n)
+space complexity: O(n)
+-------------------*/
+
