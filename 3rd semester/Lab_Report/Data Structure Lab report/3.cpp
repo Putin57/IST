@@ -49,3 +49,10 @@ int main(){
     cout << "Sorry!!.. The search item not found in the array..\n";
     return 0;
 }
+
+/*
+----------------------------
+time complexity: O(log(n))
+space complexity: O(n)
+---------------------------
+*/
