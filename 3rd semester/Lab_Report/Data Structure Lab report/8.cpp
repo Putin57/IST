@@ -35,3 +35,10 @@ int main() {
     cout << "Final text: " << result << '\n' << '\n';
     return 0;
 }
+
+/*
+--------------------------------------------------------
+time complexity: O(text_length × old_substring_length)
+space complexity: O(text_length + old_substring_length)
+--------------------------------------------------------
+*/
