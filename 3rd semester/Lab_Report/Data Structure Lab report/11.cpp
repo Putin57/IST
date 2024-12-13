@@ -44,3 +44,12 @@ int main() {
 
     return 0;
 }
+
+
+
+/*
+---------------------------------
+time complexity: O(n x m)
+space complexity: O(1)
+---------------------------------
+*/
