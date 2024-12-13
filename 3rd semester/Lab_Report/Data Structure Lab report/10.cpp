@@ -43,3 +43,12 @@ int main(){
     cout << '\n' << '\n';
     return 0;
 }
+
+/*
+-------------------------------------------
+time complexity: 
+  i) best case / average case: O(n log(n))
+  ii) worst case: O(n^2)
+space complexity: O(n)
+-------------------------------------------
+*/
