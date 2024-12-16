@@ -1,40 +1,46 @@
-//4. Write a program to determine n fibonacchi numbers using recursion.
+// 4. Write a program to implement Tower of Hanoi problem by using recursive function
+
 /*
-------------------------------------
-|Algorithm:                        |
-|step-1: If N==0 or N==1, then     | 
-|            set Fib:=N and return |
-|step-2: call Fibonacci(FibA,N-2)  |
-|step-3: call Fibonacci (FibB,N-1) |
-|step-4: set Fib:=FibA+FibB        | 
-|strp-5: return                    | 
-------------------------------------
+-----------------------------------------
+|Algorithm:                             |
+|Tower(N, Beg, Aux, End)                |
+|step-1: If N=1, then:                  |
+|            (a)write: Beg --> End      |
+|            (b)return                  |
+|step-2: call Tower(N-1, Beg, End,Aux)  |
+|step-3: write Tower(N-1, Aux, Beg, End)|
+|step-4: call Tower(N-1, Aux, Beg, End) |
+|step-5: Return                         |
+-----------------------------------------
 */
 
 #include <bits/stdc++.h>
-using namespace std; 
+using namespace std;
+ 
 
-int fibonacci(int n){
-    if((n==0) or (n==1)) return n;
-    return fibonacci(n-1)+fibonacci(n-2);
-}
-
-int main(){
-    int n; 
-    cout << "\nEnter the positive number: ";
-    cin >> n;
-    cout << "The Fibonacci series upto Nth : ";
-    for(int i = 0; i < n + 1; i++){
-        cout << fibonacci(i) << ' ';
+void tower(int n, string begin, string aux, string end){
+    if(n == 1){
+        cout << begin <<" --> " << end << "\n";
+        return;
     }
-    cout << '\n' << '\n';
+    tower(n-1, begin, end, aux);
+    cout << begin << " --> " << end << "\n";
+    tower(n-1, aux, begin, end);
+    return;
+ 
+}
+int main(){
+    cout << "\nEnter the number : ";
+    int n; cin >> n;
+    string a = "A", b = "B", c= "C";
+    tower(n, a, b, c);
     return 0;
 }
 
 
 /*
 --------------------------
-time complexity: O(n.2^n)
+time complexity: O(2^n)
 space complexity: O(n)
 --------------------------
 */
