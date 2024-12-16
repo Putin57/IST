@@ -1,54 +1,93 @@
-//10. write a program to sort an array using quick sort algorithm
+// 10. Write a program to implement all operation in stack (insertion and deletion).
 /*
------------------------------------------------------------------
-Algorithm:                                                     
-step-1: Top:=NULL                                              
-step-2: If N>1, then:Top:=Top+1, Lower[1]:=1, Upper[1]:=N      
-step-3: Repeat steps 4 to 7 while Top != NULL                  
-step-4:     set Beg:=Lower[Top], End:=Upper[Top], Top:=Top-1   
-step-5:     call Quick(A,N,Beg,End, Loc)                       
-step-6:     If Beg<Loc-1, then:                                
-                Top:=Top+1, Lower[Top]:=Beg, Upper[Top]=Loc-1  
-step-7:     If Loc+1 < End, then:                              
-                Top:Top+1, Lower[Top]:=Loc+1, Upper[Top]:=End  
-step-8: Exit                                                       
------------------------------------------------------------------
+|-------------------------------------------------------|
+|Algorithm (Insertion):                                 |
+|Procedure PUSH(stack, N, top, value)                   |
+|    IF top >= N - 1 THEN                               |
+|        PRINT "Stack Overflow! Cannot push value."     |
+|        RETURN                                         |
+|    END IF                                             |
+|    top := top + 1                                     |
+|    stack[top] := value                                |
+|    PRINT value + " pushed into the stack."            |
+|END Procedure                                          |
+|-------------------------------------------------------|
+|Algorithm (Deletion):                                  |
+|Procedure POP(stack, top)                              |
+|    IF top < 0 THEN                                    |
+|        PRINT "Stack Underflow! Cannot pop an element."|
+|        RETURN                                         |
+|    END IF                                             |
+|    value := stack[top]                                |
+|    top := top - 1                                     |
+|    PRINT value + " popped from the stack."            |
+|END Procedure                                          |
+|-------------------------------------------------------|
 */
-#include <bits/stdc++.h>
-using namespace std; 
 
-vector<int>quick_sort(const vector <int> &arr){
-    if(arr.size() <= 1) return arr;
-    int pivot = arr[0];
-    vector<int>smaller, greater;
-    for(int i = 1; i < arr.size(); i++){
-        if(arr[i] <= pivot) smaller.push_back(arr[i]);
-        else greater.push_back(arr[i]);
+#include <iostream>
+using namespace std;
+
+const int N = 100;
+int stack[N];
+int top = -1;
+void push(int value) {
+    if (top >= N - 1) {
+        cout << "Stack Overflow! Cannot push " << value << ".\n";
+        return;
     }
-    vector<int>smaller_sorted = quick_sort(smaller), greater_sorted = quick_sort(greater);
-    smaller_sorted.push_back(pivot);
-    smaller_sorted.insert(smaller_sorted.end(), greater_sorted.begin(), greater_sorted.end());
-    return smaller_sorted;
+    top++;
+    stack[top] = value;
+    cout << value << " pushed into the stack.\n";
 }
-
-int main(){
-    cout << "\nEnter the size of array: ";
-    int n; cin >> n;
-    cout << "Enter the element of array: ";
-    vector<int>arr(n),final_sort;
-    for(int i = 0; i < n; i++) cin >> arr[i];
-    cout << "Quick Sort: ";
-    final_sort = quick_sort(arr);
-    for(int i: final_sort) cout << i << ' ';
-    cout << '\n' << '\n';
+void pop() {
+    if (top < 0) {
+        cout << "Stack Underflow! Cannot pop an element.\n";
+        return;
+    }
+    cout << stack[top] << " popped from the stack.\n";
+    top--;
+}
+void display() {
+    if (top < 0) {
+        cout << "Stack is empty.\n";
+        return;
+    }
+    cout << "Stack elements are:\n";
+    for (int i = top; i >= 0; i--) cout << stack[i] << '\n';
+}
+int main() {
+    int choice, value;
+    while (true) {
+        cout << "\n1. Push\n";
+        cout << "2. Pop\n";
+        cout << "3. Display\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        if (choice == 1) {
+            cout << "Enter the value to push: ";
+            cin >> value;
+            push(value);
+        } else if (choice == 2) pop();
+        else if (choice == 3) display();
+        else if (choice == 4) {
+            cout << "Exiting...\n";
+            break;
+        } else cout << "Invalid choice! Please try again.\n";
+    }
     return 0;
 }
 
+
 /*
--------------------------------------------
-time complexity: 
-  i) best case / average case: O(n log(n))
-  ii) worst case: O(n^2)
-space complexity: O(n)
--------------------------------------------
+|-------------------------|
+|Time Complexity:         |
+|    i) push: O(1)        |
+|    ii) pop: O(1)        |
+|    iii) peek:O(1)       |
+|    iv)search:O(n)       |
+|                         |
+|space complexity: O(n)   |
+|-------------------------|
 */
