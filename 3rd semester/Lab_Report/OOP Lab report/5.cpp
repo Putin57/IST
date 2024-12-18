@@ -1,36 +1,37 @@
 /*
-5. Write a program that finds the volume of different shapes (like rectangle.cylinder,cube)
-using function overloading.
+5.Create a class called COMPLEX that has two private data
+called real and imaginary. Include constructor function to input real and imaginary values, show() to display complex numbers.
+Write a program to add two complex numbers.
 */
-#include <bits/stdc++.h>
-using namespace std;
 
-class Volume {
-public:
-  int length, width, height, radius;
-  int shape(int length) { 
-    return pow(length, 3);
-  }
-  int shape(int length, int width, int height) {
-    return length * width * height;
-  }
-  float shape(int radius, int height) {
-    return M_PI * radius * radius * height;
-  }
+#include <bits/stdc++.h>
+using namespace std; 
+
+class Complex{
+    int real, imaginary;
+    public:
+        Complex(int real = 0, int imaginary = 0): real(real), imaginary(imaginary){};
+        void input(){
+            cin >> real >> imaginary;
+        }
+        Complex operator+(Complex c2){
+            Complex c3;
+            c3.real = real + c2.real;
+            c3.imaginary = imaginary + c2.imaginary;
+            return c3;
+        }
+        void show(){
+            cout << real << " + i"<<imaginary << '\n';
+        }
 };
 
-int main() {
-  Volume vol;
-  cout << "\nEnter the Length: ";
-  cin >> vol.length;
-  cout << "Enter the Width: ";
-  cin >> vol.width;
-  cout << "Enter the height: ";
-  cin >> vol.height;
-  cout << "Enter the radious: ";
-  cin >> vol.radius;
-  cout << "\nThe Volume of Ractangle: " << vol.shape(vol.length, vol.width, vol.height) << '\n';
-  cout << "The Volume of Cube: " << vol.shape(vol.length) << '\n';
-  cout << "The Volume of Cylinder: " << vol.shape(vol.radius, vol.height) << '\n' << '\n';
-  return 0;
+int main(){
+    Complex com, tom, c3;
+    cout << "Enter 1st two number: ";
+    com.input();
+    cout << "Enter 2nd two number: ";
+    tom.input();
+    c3 = com + tom;
+    c3.show();
+    return 0;
 }
