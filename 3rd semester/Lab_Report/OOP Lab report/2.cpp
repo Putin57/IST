@@ -1,35 +1,35 @@
 /*
-2.Create a class called COMPLEX that has two private data
-called real and imaginary. Include constructor function to input real and imaginary values, show() to display complex numbers.
-Write a program to add two complex numbers.
+2. Write a program to swap two numbers declared in two 
+different classes using friend function.
 */
-
 #include <bits/stdc++.h>
-using namespace std; 
-
-class Complex{
-    int real, imaginary;
+using namespace std;
+class ClassB;
+class ClassA{
+    int numA;
     public:
-        Complex(int real = 0, int imaginary = 0): real(real), imaginary(imaginary){};
-        void input(){
-            cin >> real >> imaginary;
-        }
-        Complex operator+(Complex c2){
-            Complex c3;
-            c3.real = real + c2.real;
-            c3.imaginary = imaginary + c2.imaginary;
-            return c3;
-        }
-        void show(){
-            cout << real << " + i"<<imaginary << '\n';
-        }
+        ClassA(int num):numA(num){}
+        friend void swap(ClassA &a,ClassB &b);
+        void display(){cout<<"ClassA numA: "<<numA<<"\n";}
 };
+class ClassB{
+    int numB;
+    public:
+        ClassB(int num):numB(num){}
+        friend void swap(ClassA &a, ClassB &b);
+        void display(){cout<<"ClassB numB: "<<numB<<"\n";}
+};
+void swap(ClassA &a,ClassB &b){swap(a.numA,b.numB);}
 
-int main(){
-    Complex com, tom, c3;
-    com.input();
-    tom.input();
-    c3 = com + tom;
-    c3.show();
+int main() {
+    int n, m;
+    cout << "Enter the 1st number: ";cin >> n; 
+    cout << "Enter the 2nd number: ";cin >> m;  
+    ClassA a(n); ClassB b(m); 
+    cout << "Before swap:" << "\n";
+    a.display(); b.display(); 
+    swap(a, b);   
+    cout <<"After swap:" << "\n";
+    a.display(); b.display();  
     return 0;
 }
