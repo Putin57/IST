@@ -1,0 +1,44 @@
+; ADD TWO NUMBERS
+
+
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG DB "ENTER TWO INTEGER NUMBERS: ","$"
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX 
+    MOV AH, 09
+    LEA DX, MSG
+    INT 21H
+    
+    MOV AH, 01
+    INT 21H
+    MOV BL, AL
+    INT 21H
+    MOV BH, AL
+    ; ADDITION
+    SUB BL, 30H
+    SUB BL, 30H
+    ADD BL, BH 
+    
+    ; NEW LINE
+    MOV AH, 02
+    MOV DL, 0AH
+    INT 21H
+    MOV DL, 0DH
+    INT 21H
+    
+    ;OUTPUT
+    MOV AH, 02
+    ADD BL, 30H
+    MOV DL, BL
+    INT 21H
+    
+    MOV AH, 4CH
+    INT 21H 
+    
+    MAIN ENDP
+END MAIN
+    
