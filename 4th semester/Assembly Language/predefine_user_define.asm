@@ -1,0 +1,57 @@
+; TWO VARIABLE OUTPUT SHOW ONE BY ONE
+; ONE VARIABLE IS PREDEFINE AND ONE IS USER DEFINE
+
+.MODEL SMALL
+.STACK
+.DATA
+    NUM1 DB 9
+    NUM2 DB ?
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+    
+    ; NUM1 OUTPUT
+    MOV AH, 02
+    MOV DL, NUM1
+    ADD DL, 30H
+    INT 21H
+    
+    ; NEW LINE
+    MOV DL, 10
+    INT 21H
+    MOV DL, 13
+    INT 21H
+    
+    ; NUM2 INPUT
+    MOV AH,01
+    INT 21H
+    MOV NUM2, AL
+    
+    ; NEW LINE
+    MOV AH, 02
+    MOV DL, 10
+    INT 21H
+    MOV DL, 13
+    INT 21H
+    
+    ; NUM1 OUTPUT
+    MOV AH, 02
+    MOV DL, NUM1
+    ADD DL, 30H
+    INT 21H 
+    
+    ; NEW LINE
+    MOV AH, 02
+    MOV DL, 10
+    INT 21H
+    MOV DL, 13
+    INT 21H
+    
+    ; NUM2 OUTPUT
+    MOV DL, NUM2
+    INT 21H
+    MOV AH, 4CH
+    INT 21H
+    MAIN ENDP
+END MAIN
