@@ -1,0 +1,55 @@
+.MODEL SMALL
+.STACK 100H
+.DATA 
+NUM1 DB ? 
+MSG1 DB "ENTER THE LETTER: ","$"
+MSG2 DB "THE RESULT IS : ","$"
+ 
+.CODE
+MAIN PROC 
+    MOV AX, @DATA
+    MOV DS, AX
+    MOV AH,09
+    LEA DX, MSG1
+    INT 21H    
+    ;INPUT 
+    MOV AH, 01
+    INT 21H
+    MOV NUM1, AL 
+ 
+    ; NEW LINE
+    MOV AH, 02
+    MOV DL, 0AH
+    INT 21H
+    MOV DL, 0DH
+    INT 21H
+ 
+ 
+    MOV AX, @DATA
+    MOV DS, AX
+    MOV AH,09
+    LEA DX, MSG2
+    INT 21H 
+ 
+    ; LETTER CHANGER 
+    CMP NUM1, 96
+    JG TO_UPPER
+    JL TO_LOWER  
+ 
+    TO_UPPER:
+    SUB NUM1, 32
+    JMP OUTPUT
+ 
+    TO_LOWER:
+    ADD NUM1, 32
+ 
+    OUTPUT:
+    MOV DL, NUM1
+    MOV AH, 02
+    INT 21H
+ 
+    MOV AH, 4CH
+    INT 21H
+   MAIN ENDP
+END MAIN
+ 
