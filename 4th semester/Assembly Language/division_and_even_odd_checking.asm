@@ -1,0 +1,51 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG1 DB 'ENTER THE NUMBER: ','$'
+    MSG2 DB 0DH,0AH,'THE NUMBER IS EVEN ','$'
+    MSG3 DB 0DH,0AH,'THE NUMBER IS ODD ','$'
+    NUM1 DB ? 
+    NUM2 DB 2
+    Q DB ?
+    R DB ?
+.CODE
+ MAIN PROC
+    MOV AX, @DATA
+    MOV DS,AX
+ 
+    MOV DX,OFFSET MSG1; DISPLAY 1ST MSG
+    MOV AH,09H
+    INT 21H
+ 
+    MOV AH,01H;INPUT
+    INT 21H
+    MOV NUM1,AL
+    MOV AX,0
+    MOV AL,NUM1
+    SUB AL,30H                  
+ 
+    DIV NUM2
+    MOV Q, AL
+    MOV R, AH
+ 
+    CMP R,0
+    JNE ODD
+EVEN:
+    MOV DX,OFFSET MSG2
+    MOV AH,09H
+    INT 21H
+    JMP EXIT    
+ODD:
+    MOV DX,OFFSET MSG3
+    MOV AH,09H
+    INT 21H
+    JMP EXIT
+EXIT:
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+ END MAIN
+ 
+ 
+ 
+ 
