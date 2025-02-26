@@ -1,0 +1,101 @@
+##############-- create the database(bank)--################
+create table bank;
+
+############--use this table--#############
+use bank;
+
+
+##########--create the table--##############
+
+create table Branch(
+branch_name varchar(30) not null primary key,
+branch_city varchar(30),
+Assets double
+);
+
+
+create table Customer(
+customerID varchar(30) not null primary key,
+customer_name varchar(30) not null,
+customer_street varchar(30),
+customer_city varchar(30)
+);
+
+create table Account(
+account_number varchar(30) not null primary key,
+branch_name varchar(30),
+balance double,
+foreign key Account(branch_name) references Branch(branch_name)
+);
+
+create table loan(
+loan_number varchar(30) not null primary key,
+branch_name varchar(30),
+amount double,
+foreign key loan(branch_name) references Branch(branch_name)
+);
+
+create table Depositor(
+customerID varchar(30),
+account_number varchar(30),
+foreign key (customerID) references Customer(customerID),
+foreign key (account_number) references Account(account_number)
+);
+
+
+create table Borrower(
+customerID varchar(30),
+loan_number varchar(30),
+primary key (customerID, loan_number),
+foreign key (customerID) references Customer(customerID),
+foreign key (loan_number) references loan(loan_number)
+);
+
+
+##############--insert--##################
+insert into Branch(
+branch_name, branch_city, Assets)
+values
+("Uttara", "Uttara", 10000000000),
+("Mirpur", "Mirpur",1000000000);
+
+
+####################
+###################
+Q/A
+
+1. find all customers who have account but no loan in bank
+
+ans:
+
+select customer_name from Customer
+where customerID in (select customerID from depositor) and 
+customerID not in (select customerID from Borrower);
+
+2. delete all loans between 10000 and 25000
+ans:
+delete from loan
+where amount between 10000 and 25000
+
+
+3. find the name of all customers who have a loan at Uttara Branch.
+ans:
+select customer name
+from customer
+where customerID in ( select customerID from borrower b, loan l
+where b.loan_number = l.loan_number
+and l.branch_name="Uttara branch);
+
+
+4. find all customers who have both loan and account.
+ans:
+select customer_name
+from customer_name
+where customerID in (select customerID from Depositor)
+and customerID in (select, customerID from Borrower);
+
+
+5. delete all loans with an amount in the range of 0 to 500.
+ans: 
+delete from loan
+where amount between 0 and 500;
