@@ -1,6 +1,7 @@
 """
     Quick sort 
-    time complexity: O(n^2)
+    time complexity (worst case): O(n^2)
+    time complexity (best case): O(nlog(n))
     space complexity: O(n)
 """
 
