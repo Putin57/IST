@@ -6,3 +6,5 @@ All problems in IST with source code...
 [IST Battle of Brains 2023](https://vjudge.net/contest/537122)
 
 [IST Battle of Brains 2025](https://www.hackerrank.com/battle-of-brains-2025)
+
+[DUET IUPC 2025](https://toph.co/c/duet-inter-university-iupc-2025)
