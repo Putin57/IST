@@ -1,4 +1,4 @@
-# How to open mysql by CMD
+# How to open MySQL by CMD
 
 ```txt
 cd/
