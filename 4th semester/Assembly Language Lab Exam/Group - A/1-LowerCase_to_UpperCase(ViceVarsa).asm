@@ -12,7 +12,7 @@ main proc
     mov ah, 2        ; print char
     int 21h       
     
-    mov ah, 4Ch      ; exit
+    mov ah, 4ch      ; exit
     int 21h
     main endp
 end main
