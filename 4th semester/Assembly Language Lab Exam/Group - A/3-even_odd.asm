@@ -4,7 +4,7 @@
     evenMsg db 0dh,0ah,'Even$'
     oddMsg  db 0dh,0ah,'Odd$'
 .code
-main proc
+start:
     mov ax,@data
     mov ds,ax
 
@@ -22,5 +22,4 @@ main proc
     
         mov ah,4ch
         int 21h
-        main endp          
-end main
+end start
