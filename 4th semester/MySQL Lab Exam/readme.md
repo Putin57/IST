@@ -1,1 +1,1 @@
-# Schema -> Data -> Query
+# Make Schema -> Insert Data -> Query
