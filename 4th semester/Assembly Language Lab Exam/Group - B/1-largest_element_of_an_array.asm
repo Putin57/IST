@@ -3,7 +3,7 @@
 .data
     arr db 5 dup(?)
 .code
-main proc
+start:
     mov ax,@data
     mov ds,ax
     lea di,arr
@@ -28,5 +28,4 @@ main proc
         int 21h
         mov ah,4ch
         int 21h
-        main endp
-end main
+end start
