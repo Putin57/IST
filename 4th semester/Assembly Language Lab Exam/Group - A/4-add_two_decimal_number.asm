@@ -1,7 +1,7 @@
 .model small
 .stack 100h
 .code
-main proc
+start:
     mov ah,1
     int 21h
     sub al,'0'
@@ -22,5 +22,4 @@ main proc
 
     mov ah,4ch
     int 21h
-    main endp
-end main
+end start
