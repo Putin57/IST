@@ -1,4 +1,3 @@
-; Short 8086 program to toggle case of a letter
 .model small
 .stack 100h
 .code
