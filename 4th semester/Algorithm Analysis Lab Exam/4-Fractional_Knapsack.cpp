@@ -15,21 +15,36 @@ int main() {
     vector<pair<double, pair<int, int>>> x;
     for (int i = 0; i < n; i++) {
         double rat = (double)value[i] / weight[i];
-        x.push_back({rat, {value[i], weight[i]}});
+        x.push_back({rat, {weight[i], value[i]}});
     }
-    int total = 0;
+    float total = 0;
     sort(x.begin(),x.end());
     for (auto &item : x) {
         //cout << "Ratio: " << item.first << ", Value: " << item.second.first << ", Weight: " << item.second.second << endl;
-        if(item.second.second<=w){
-            total += item.second.first;
-            w-=item.second.second;
+        if(item.second.first<=w){
+            total += item.second.second;
+            w-=item.second.first;
         }
         else{
             total += item.first*w;
             break;
         }
     }
+    cout << "Maximum value in the knapsack: " << total << '\n'; 
     return 0;
 }
+
+/*
+time complexity: O(n logn)
+space complexity: O(n)
+
+input:
+3
+10 20 30
+60 100 120
+50
+
+output:
+Maximum value in the knapsack: 220
+*/
  
