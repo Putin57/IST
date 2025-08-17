@@ -24,3 +24,24 @@ int main() {
         cout<<"\n";
     }
 }
+
+
+
+/*
+input:
+4 4
+0 1 5
+0 3 10
+1 2 3
+2 3 1
+
+output:
+0 5 8 9 
+INF 0 3 4 
+INF INF 0 1 
+INF INF INF 0 
+
+
+time complexity: O(V^3)
+space complexity: O(V^2)
+*/
