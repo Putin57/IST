@@ -1,1 +1,1 @@
-This is the computer graphics repository
+computer graphics repository
