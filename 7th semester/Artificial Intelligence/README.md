@@ -1,1 +1,3 @@
+```txt
 Artificial Intelligence Lab
+```
