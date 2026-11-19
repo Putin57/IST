@@ -3,7 +3,7 @@
 ## windows
 
 1. open CMD
-2. check python
+2. check python version 
 ```txt
 py --version
 ```
