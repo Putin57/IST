@@ -22,3 +22,4 @@ py -m pip install notebook
 ```txt
 py -m notebook
 ```
+[N:B:] sometimes there can be problems with specific version of Python
